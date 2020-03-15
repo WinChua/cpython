@@ -1,0 +1,11 @@
+module Fig3
+{
+  stm = Compound(stm head, stm next)
+      | Assign(identifier lval, exp rval)
+      | Print(exp_list args)
+  exp_list = ExpList(exp head, exp_list next) | Nil
+  exp = Id(identifier id)
+      | Num(int num)
+      | Op(exp lval, binop op, exp rval)
+  binop = Plus | Minus | Times | Div
+}
